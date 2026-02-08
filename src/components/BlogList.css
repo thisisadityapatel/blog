@@ -1,0 +1,30 @@
+.blog-list {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.blog-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+  gap: 2rem;
+}
+
+.blog-title {
+  font-style: italic;
+  text-decoration: underline;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+
+.blog-title:hover {
+  opacity: 0.7;
+}
+
+.blog-date {
+  font-style: normal;
+  white-space: nowrap;
+  opacity: 0.8;
+}

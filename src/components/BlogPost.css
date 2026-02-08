@@ -1,0 +1,96 @@
+.blog-post {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 2rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.back-link:hover {
+  opacity: 1;
+}
+
+.blog-content {
+  line-height: 1.8;
+}
+
+.blog-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-content h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content p {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  line-height: 1.8;
+}
+
+/* Inline code styling */
+.blog-content code:not(pre code) {
+  background-color: rgba(110, 118, 129, 0.2);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Code block container styling */
+.blog-content pre {
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.blog-content pre > div {
+  margin: 0 !important;
+  border-radius: 6px;
+}
+
+/* Syntax highlighter overrides */
+.blog-content pre code {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* Image styling */
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.blog-content p img {
+  margin: 1.5rem auto;
+}
