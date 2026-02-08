@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-light: #f0eee7;
+  --bg-dark: #1f1e1d;
+  --text-light: #1f1e1d;
+  --text-dark: #f0eee7;
+}
+
+body {
+  font-family: 'STIX Two Text', serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
