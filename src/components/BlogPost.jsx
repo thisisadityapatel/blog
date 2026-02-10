@@ -5,24 +5,31 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { loadBlogPosts } from '../utils/blogLoader';
+import { loadBlogPost } from '../utils/blogLoader';
 import './BlogPost.css';
 
 function BlogPost() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchPost() {
-      const posts = await loadBlogPosts();
-      const foundPost = posts.find(p => p.slug === slug);
+      setLoading(true);
+      // Load only the specific blog post needed
+      const foundPost = await loadBlogPost(slug);
       setPost(foundPost);
+      setLoading(false);
     }
     fetchPost();
   }, [slug]);
 
-  if (!post) {
+  if (loading) {
     return <div>Loading...</div>;
+  }
+
+  if (!post) {
+    return <div>Post not found</div>;
   }
 
   return (

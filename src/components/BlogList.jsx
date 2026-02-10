@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { loadBlogPosts } from '../utils/blogLoader';
+import { loadBlogMetadata } from '../utils/blogLoader';
 import './BlogList.css';
 
 function BlogList() {
@@ -8,7 +8,8 @@ function BlogList() {
 
   useEffect(() => {
     async function fetchPosts() {
-      const blogPosts = await loadBlogPosts();
+      // Only load metadata (title, date, slug) - not full content
+      const blogPosts = await loadBlogMetadata();
       setPosts(blogPosts);
     }
     fetchPosts();

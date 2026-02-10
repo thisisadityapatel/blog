@@ -10,32 +10,90 @@ function parseDate(dateString) {
   return isNaN(parsed.getTime()) ? new Date(0) : parsed;
 }
 
+// Lazy load markdown files (not eager)
+const blogFiles = import.meta.glob('/data/*.md', { as: 'raw' });
+
+// Load only metadata (title, date, slug) for the blog list
+export async function loadBlogMetadata() {
+  const metadata = await Promise.all(
+    Object.entries(blogFiles).map(async ([filepath, importFn]) => {
+      const content = await importFn();
+      const filename = filepath.split('/').pop().replace('.md', '');
+      const lines = content.split('\n');
+
+      // Parse title (first line, remove # and trim)
+      const title = lines[0].replace(/^#\s*/, '').trim();
+
+      // Parse date (second line)
+      const date = lines[1].trim();
+
+      return {
+        slug: filename,
+        title,
+        date,
+        dateObj: parseDate(date),
+      };
+    })
+  );
+
+  // Sort by date (newest first)
+  return metadata.sort((a, b) => b.dateObj.getTime() - a.dateObj.getTime());
+}
+
+// Load full content for a specific blog post
+export async function loadBlogPost(slug) {
+  const filepath = `/data/${slug}.md`;
+  const importFn = blogFiles[filepath];
+
+  if (!importFn) {
+    return null;
+  }
+
+  const content = await importFn();
+  const lines = content.split('\n');
+
+  // Parse title (first line, remove # and trim)
+  const title = lines[0].replace(/^#\s*/, '').trim();
+
+  // Parse date (second line)
+  const date = lines[1].trim();
+
+  return {
+    slug,
+    title,
+    date,
+    dateObj: parseDate(date),
+    content,
+  };
+}
+
+// Legacy function for backward compatibility (loads all posts with full content)
 export async function loadBlogPosts() {
-  // In Vite, we can use import.meta.glob to load all markdown files
-  const blogFiles = import.meta.glob('/data/*.md', { as: 'raw', eager: true });
+  const posts = await Promise.all(
+    Object.entries(blogFiles).map(async ([filepath, importFn]) => {
+      const content = await importFn();
+      const filename = filepath.split('/').pop().replace('.md', '');
+      const lines = content.split('\n');
 
-  const posts = Object.entries(blogFiles).map(([filepath, content]) => {
-    const filename = filepath.split('/').pop().replace('.md', '');
-    const lines = content.split('\n');
+      // Parse title (first line, remove # and trim)
+      const title = lines[0].replace(/^#\s*/, '').trim();
 
-    // Parse title (first line, remove # and trim)
-    const title = lines[0].replace(/^#\s*/, '').trim();
+      // Parse date (second line)
+      const date = lines[1].trim();
 
-    // Parse date (second line)
-    const date = lines[1].trim();
+      // Get the rest as content
+      const postContent = lines.slice(2).join('\n').trim();
 
-    // Get the rest as content
-    const postContent = lines.slice(2).join('\n').trim();
-
-    return {
-      slug: filename,
-      title,
-      date,
-      dateObj: parseDate(date),
-      content,
-      postContent
-    };
-  });
+      return {
+        slug: filename,
+        title,
+        date,
+        dateObj: parseDate(date),
+        content,
+        postContent
+      };
+    })
+  );
 
   // Sort by date (newest first)
   return posts.sort((a, b) => b.dateObj.getTime() - a.dateObj.getTime());

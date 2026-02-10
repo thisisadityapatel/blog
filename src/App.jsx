@@ -15,6 +15,7 @@ function App() {
 
   useEffect(() => {
     document.body.className = theme
+    localStorage.setItem('theme', theme)
   }, [theme])
 
   // Listen for system theme changes
@@ -50,7 +51,7 @@ function App() {
         <nav className="links">
           <a href="https://github.com/thisisadityapatel" target="_blank" rel="noopener noreferrer">github</a>
           <a href="https://linkedin.com/in/thisisadityapatel" target="_blank" rel="noopener noreferrer">linkedin</a>
-          <a href="https://aditya-patel.com" rel="noopener noreferrer">Portfolio Website</a>
+          <a href="https://aditya-patel.com" rel="noopener noreferrer">portfolio website</a>
         </nav>
 
         <Routes>

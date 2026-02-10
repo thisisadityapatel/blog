@@ -10,4 +10,12 @@ export default defineConfig({
       },
     }),
   ],
+  // SPA fallback for dev server
+  server: {
+    historyApiFallback: true,
+  },
+  // Ensure proper preview server config
+  preview: {
+    historyApiFallback: true,
+  },
 })

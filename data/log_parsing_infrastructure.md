@@ -147,7 +147,10 @@ This code reads Kafka messages from multiple partitions in the topic and each ev
 
 To set up Spark workers on AWS, you can use several approaches:
 
-**AWS EMR (Managed)**: `aws emr create-cluster --name "LogProcessingCluster" --release-label emr-6.9.0 --instance-groups InstanceGroupType=MASTER,InstanceType=m5.xlarge,InstanceCount=1 InstanceGroupType=CORE,InstanceType=m5.2xlarge,InstanceCount=5`
+**AWS EMR (Managed)**: 
+```shell
+aws emr create-cluster --name "LogProcessingCluster" --release-label emr-6.9.0 --instance-groups InstanceGroupType=MASTER,InstanceType=m5.xlarge,InstanceCount=1 InstanceGroupType=CORE,InstanceType=m5.2xlarge,InstanceCount=5
+```
 
 1 Master node (m5.xlarge), 5 Core nodes (m5.2xlarge) for the above code.
 
