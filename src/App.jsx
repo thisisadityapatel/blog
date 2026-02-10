@@ -5,10 +5,18 @@ import BlogList from './components/BlogList'
 import BlogPost from './components/BlogPost'
 
 function App() {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState(() => {
+    // Check if user has a saved preference
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) return savedTheme
+
+    // Otherwise, use system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  })
 
   useEffect(() => {
     document.body.className = theme
+    localStorage.setItem('theme', theme)
   }, [theme])
 
   const toggleTheme = () => {
