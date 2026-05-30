@@ -6,7 +6,7 @@ A couple of weeks back, while paying the monthly Claude bill, a question slowly 
 *How long before we can run a serious, dedicated LLM locally on a laptop?* 
 
 <br/>
-Before you hit me with "But Apple Intelligence!", let’s be real. I’m talking about a local model tailored for software engineering needs. Note stopping at laptops? data centers powered by apple silicon, or a mini-cluster of macs fueling a lean startup, why should Nvidia getting all the juice here.
+Before you hit me with "Apple developer intelligence!", let’s be real. I’m talking about a local models tailored for software engineering needs. Not stopping at laptops? data centers powered by apple silicon, or a mini-cluster of macs fueling a lean startup, why should Nvidia getting all the juice here.
 
 Sure, [Ollama](https://ollama.com/) does a fantastic job of letting devs install and run local models. But "just working" is boring, we want inference running at light speed. Plus, the ecosystem is missing a definitive benchmarking tool to pit Model 1.1.0 against Model 1.1.1 (Finetuned to any specific need).
 
