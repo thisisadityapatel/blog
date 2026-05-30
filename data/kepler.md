@@ -1,7 +1,9 @@
 # Kepler: Benchmarking LLMs on macOS Metal GPUs
 30th May, 2026
 
-A couple of weeks back, while paying the monthly Claude bill, a question slowly intensified *How long before we can run a serious, dedicated LLM locally on a laptop?* 
+A couple of weeks back, while paying the monthly Claude bill, a question slowly intensified :
+
+*How long before we can run a serious, dedicated LLM locally on a laptop?* 
 
 <br/>
 Before you hit me with "But Apple Intelligence!", let’s be real. I’m talking about a local model tailored for software engineering needs. Note stopping at laptops? data centers powered by apple silicon, or a mini-cluster of macs fueling a lean startup, why should Nvidia getting all the juice here.
