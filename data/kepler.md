@@ -1,16 +1,16 @@
 # Kepler: Benchmarking LLMs on macOS Metal GPUs
 30th May, 2026
 
-Last week, while paying my monthly Claude bill, a question slowly intensified *How long before we can run a serious, dedicated LLM locally on a laptop?* 
+A couple of weeks back, while paying the monthly Claude bill, a question slowly intensified *How long before we can run a serious, dedicated LLM locally on a laptop?* 
 
 <br/>
-Before you hit me with "But Apple Intelligence!", let’s be real. I’m talking about a local model tailored for software engineering needs. And why stop at laptops? Think data centers powered by Apple Silicon, or a mini-cluster of Macs fueling a lean startup, why Nvidia getting all the juice here.
+Before you hit me with "But Apple Intelligence!", let’s be real. I’m talking about a local model tailored for software engineering needs. Note stopping at laptops? data centers powered by apple silicon, or a mini-cluster of macs fueling a lean startup, why should Nvidia getting all the juice here.
 
-Sure, [Ollama](https://ollama.com/) does a fantastic job of letting devs install and run local models. But "just working" is boring, we want inference running at light speed. Plus, the ecosystem is missing a definitive benchmarking tool to pit Model 1.1.0 against Model 1.1.1 (Finetunes to a need) and see who actually takes the crown.
+Sure, [Ollama](https://ollama.com/) does a fantastic job of letting devs install and run local models. But "just working" is boring, we want inference running at light speed. Plus, the ecosystem is missing a definitive benchmarking tool to pit Model 1.1.0 against Model 1.1.1 (Finetuned to any specific need).
 
 Checkout **Kepler** (https://github.com/thisisadityapatel/kepler).
 
-Kepler is a lightweight tool designed for developers running LLMs on macOS Metal who need to see exactly how their inference stacks up. Choosing a model isn't just about size; it depends on your specific architecture, whether you're building multi-agent coding workflows, serving multiple users, or demanding strict structured JSON/Regex outputs. Kepler lets you test both **GGUF** and **MLX** formats across different inference engines so you can deploy the absolute best fit for your stack.
+Kepler is a lightweight tool designed for developers running LLMs on macOS Metal who need to see exactly how their inference stacks up. Choosing a model isn't just about size; it depends on your specific architecture, whether you're building multi-agent coding workflows, serving multiple users, or demanding strict structured JSON/Regex outputs. Kepler test both **GGUF** and **MLX** formats across different inference engines so you can deploy the absolute best fit for your stack.
 <br/>
 
 ### The Inference Engine Breakdown
