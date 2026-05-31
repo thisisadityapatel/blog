@@ -6,7 +6,7 @@ A couple of weeks back, while paying the monthly Claude bill, a question slowly 
 *How long before we can have some serious LLM inference that can be used for agentic tasks on my macOS locally?*
 
 <br/>
-Before you hit me with "Apple developer intelligence!", let's not go there—that's a different problem. My curiosity really came from not being able to efficiently know how my fine-tuned LLM benchmarked against other models, especially if I were running them locally on my macOS. On a side note, I need to connect with someone working in a bigger MLOps team to understand, from a first-principles perspective, how research teams do it.
+Before you hit me with "Apple developer intelligence!", let's not go there that's a different problem. My curiosity really came from not being able to efficiently know how my fine-tuned LLM benchmarked against other models, especially if I were running them locally on my macOS. On a side note, I need to connect with someone working in a bigger MLOps team to understand, from a first-principles perspective, how research teams do it.
 
 [Ollama](https://ollama.com/) does a fantastic job of letting devs install and run local models. But "just working" is boring; I want inference running at sonic speed. Plus, the ecosystem is missing a definitive benchmarking tool to pit Model 1.1.0 against Model 1.1.1 (fine-tuned to any specific need).
 
