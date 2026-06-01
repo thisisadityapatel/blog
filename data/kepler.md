@@ -1,4 +1,4 @@
-# Kepler: Benchmarking LLMs on macOS Metal GPUs
+# Kepler: Benchmarking LLMs on macOS metal GPUs
 30th May, 2026
 
 A couple of weeks back, while paying the monthly Claude bill, a question slowly intensified:

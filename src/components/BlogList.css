@@ -23,8 +23,18 @@
   opacity: 0.7;
 }
 
+.blog-meta {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
 .blog-date {
   font-style: normal;
-  white-space: nowrap;
   opacity: 0.8;
+}
+
+.dot-ripple {
+  color: #DAA520;
 }
