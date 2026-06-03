@@ -1,7 +1,7 @@
-# Distributed Log Processing Infrastructure for Enterprise CI/CD
+# Distributed Log Processing Infrastructure for CI/CD Pipelines @ Scale
 30th August, 2024
 
-I built systems for distributed log processing at scale at my internship with RBC, here is my take and understanding on designing such scalable infrastructures. Modern CI/CD pipelines generate massive volumes of unstructured log data that contain critical insights about deployment failures and performance bottlenecks, requiring real-time processing infrastructure to extract actionable data insights from these streams. This data can be used to generate DevOps Insights ([DevOps DORA](https://www.atlassian.com/devops/frameworks/dora-metrics), [DevOps SPACE](https://linearb.io/blog/space-framework) frameworks), clean pre-training datasets for machine learning models, or for government regulatory needs ([SMOB](https://www.cyber.gc.ca/en/news-events/joint-guidance-shared-vision-software-bill-materials-cyber-security)).
+I built distributed systems for log processing  during my MLSE internship with RBC, here is my take and understanding on designing such scalable infrastructures. Modern CI/CD pipelines generate massive volumes of unstructured log data that contain critical insights about deployment failures and performance bottlenecks, requiring real-time processing infrastructure to extract actionable data insights from these streams. This data can be used to generate DevOps Insights ([DevOps DORA](https://www.atlassian.com/devops/frameworks/dora-metrics), [DevOps SPACE](https://linearb.io/blog/space-framework) frameworks), clean pre-training datasets for machine learning models, or for government regulatory needs ([SMOB](https://www.cyber.gc.ca/en/news-events/joint-guidance-shared-vision-software-bill-materials-cyber-security)).
 
 ### Why
 
